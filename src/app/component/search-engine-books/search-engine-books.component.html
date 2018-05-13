@@ -1,0 +1,58 @@
+<!-- Moteur de recherche -->
+<div class="search-section">
+  <div class="search-group">
+    <label for="input-author" class="search-label">Recherchez par auteur</label>
+    <input class="search-input" id="input-author" (keyup)="fetch()" placeholder="tapez..."
+           type="text" [(ngModel)]="inputAuthor">
+  </div>
+
+  <div class="search-group">
+    <label for="input-title" class="search-label">Recherchez par titre</label>
+    <input class="search-input" id="input-title" (keyup)="fetch()" type="text"
+           placeholder="tapez..." [(ngModel)]="inputTitle">
+  </div>
+</div>
+<div class="container">
+  <!-- Résultats de la recherche -->
+  <div class="result-section">
+
+    <div class="categoryChoices">
+      <div class="row">
+        <div class="grpCategory col-lg-2 col-md-3 col-sm-4 col-xs-12">
+          <input class="inputCategory" checked name="category" id="category-input-all" type="radio" value="0">
+          <label  (click)="categoryChecked(0)" class="labelCategory" for="category-input-all">Tous</label>
+        </div>
+        <div  *ngFor="let category of categories" class="grpCategory col-lg-2 col-md-3 col-sm-4 col-xs-12">
+          <input class="inputCategory" name="category" id="category-input-{{category.id}}" type="radio"
+                 [value]="category.id">
+          <label [@categoryIn] (click)="categoryChecked(category.id)" class="labelCategory" for="category-input-{{category.id}}">{{category.label}}</label>
+        </div>
+      </div><!-- end row -->
+    </div><!-- end categorychoices -->
+    <ul class="result-list" *ngIf="books">
+      <li [@bookInOut] class="result-item" (click)="selectBook(book)" *ngFor="let book of books">
+
+        <span class="bookName"> {{ book.title }} </span>
+        -
+        <strong>{{ book.author.firstName + ' '+ book.author.lastName }}</strong>
+      </li>
+    </ul>
+    <span id="errorMsg"></span>
+
+
+    <div *ngIf="page" class="pagination-items">
+      <button [disabled]="page.first" (click)="getFirstPage()" class="pagination-btn">first</button>
+      <button [disabled]="page.first" (click)="getPreviousPage()" class="pagination-btn">previous</button>
+      <button [disabled]="page.last" (click)="getNextPage()" class="pagination-btn">next</button>
+      <button [disabled]="page.last" (click)="getLastPage()" class="pagination-btn">last</button>
+      <p class="pageCounter">{{page | pages}}</p>
+      <p class="pageCounter">{{page | elements}}</p>
+    </div>
+  </div>
+
+
+  <!-- Livre sélectionné -->
+  <div [@bookSelectedInOut] *ngIf="bookSelected">
+    <book [book]="bookSelected"></book>
+  </div>
+</div>

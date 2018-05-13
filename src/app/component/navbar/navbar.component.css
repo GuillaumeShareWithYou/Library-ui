@@ -1,0 +1,48 @@
+
+.navBar{
+  padding: 24px;
+  padding-bottom: 95px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  color: white;
+}
+.navBar-items-list{
+  list-style: none;
+  padding: 0;
+}
+
+.navBar-item{
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.navBar-item i {
+  padding-right: 15px;
+}
+.navBar-item a {
+  text-decoration: none;
+}
+.navBar-item a.active{
+  color: #1db954;
+}
+
+#logo{
+  width: 50px;
+  height: auto;
+
+}
+a{
+  color: rgb(145, 136, 120);
+  transition-duration: .8s;
+}
+a:hover{
+  text-decoration: none;
+  color: white;
+}

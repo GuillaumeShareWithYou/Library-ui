@@ -1,0 +1,60 @@
+<div *ngIf="book" class="row bookContainer">
+
+  <div class="col-xs-3">
+    <div class="bookImage">
+      <img src="assets/images/le_monde_de_sophie.jpg" alt="" class="img-responsive">
+    </div>
+    <div class="buttons">
+
+        <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Modifier <br> le résumé
+        </button>
+
+        <button class="btn btn-acheter">
+          Acheter
+        </button>
+
+    </div>
+  </div>
+  <div class="col-xs-9">
+    <div  class="book-section" >
+      <h2   class="bootTitle">{{ book.title }}</h2>
+      <h4 class="authorName"> de {{book.author.firstName }} {{book.author.lastName}}</h4>
+
+      <div class="bookResume">
+        {{book.resume}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div *ngIf="book" class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <label style="color: black" class="label" for="resumeTextArea">Résumé: </label>
+        <textarea #resume class="form-control" name="" id="resumeTextArea" cols="30" rows="10"
+                  [ngModel]="book.resume">
+                 {{book.resume}}
+               </textarea>
+      </div>
+      <div class="modal-footer">
+        <button (click)="cancelChangeResume()" type="button" class="btn btn-danger" data-dismiss="modal">Annuler
+        </button>
+        <button (click)="changeResume(resume.value)" type="button" class="btn btn-success" data-dismiss="modal">
+          Valider
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+

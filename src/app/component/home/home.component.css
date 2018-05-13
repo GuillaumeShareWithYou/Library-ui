@@ -1,0 +1,6 @@
+.content{
+  background: url('../../../assets/images/terre.jpg') center no-repeat ;
+  background-size: cover;
+
+  min-height: 100vh;
+}

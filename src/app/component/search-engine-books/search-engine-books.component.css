@@ -1,0 +1,97 @@
+
+.search-section{
+  background-color: #282828;
+  padding-left: 220px;
+}
+.search-group {
+  padding: 25px 10px;
+  margin: 0 auto;
+  max-width: 1480px;
+
+}
+.search-input{
+  font-size: 40px;
+  line-height: 65px;
+  letter-spacing: -.005em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: none;
+  caret-color: #1db954;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+.search-label{
+  color: white;
+}
+.search-input:focus{
+  outline: none;
+}
+
+#errorMsg{
+  display: none;
+  color: red;
+}
+.result-list{
+  list-style: none;
+  padding: 25px 0 25px 130px;
+  min-height: 170px;
+}
+.result-section h2{
+  margin: 10px 0 20px 0;
+  text-align: center;
+}
+
+.bookName{
+  cursor: pointer;
+  color: rgb(145, 136, 120);
+  transition-duration: .5s;
+}
+.bookName:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.result-section{
+  padding: 25px 0;
+  border-bottom: 2px solid white;
+}
+.container{
+  padding-left: 220px;
+
+}
+
+
+.grpCategory{
+
+}
+.grpCategory .inputCategory:checked+.labelCategory{
+
+  background: linear-gradient(0.25turn, #47ff11, #0b6807);
+}
+.inputCategory{
+  display: none;
+}
+.labelCategory{
+  text-align: center;
+
+  border-radius: 500px;
+  min-width: 150px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  padding: 11px 20px;
+  background: hsla(0,0%,9%,.7);
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #a0a0a0;
+  transition: 2s;
+}
+
+.pagination-btn{
+  color: black;
+}
+.pagination-btn:disabled{
+
+  opacity: .5;
+}

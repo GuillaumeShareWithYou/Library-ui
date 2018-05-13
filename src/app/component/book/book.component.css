@@ -1,0 +1,30 @@
+.bookContainer{
+  padding: 30px 0 40px 0;
+}
+.bootTitle{
+  padding-top: 0;
+  margin-top: 0 ;
+  font-size: 40px;
+}
+.authorName{
+  padding-left: 10px;
+  font-style: italic;
+}
+.bookResume{
+  padding: 30px 0 15px 0;
+}
+.buttons{
+
+}
+.buttons button{
+  width: 100%;
+  margin-top: 20px;
+}
+.btn-acheter{
+  opacity: 1;
+  background-color: #000076;
+}
+.btn-acheter:hover{
+  color: white;
+  opacity: .8;
+}
