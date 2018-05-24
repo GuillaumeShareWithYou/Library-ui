@@ -9,7 +9,7 @@ class Pageable{
 
 export class Page<E>{
 
-  content : E[];
+  content: E[];
 
   pageable: Pageable;
   totalPages: number;

@@ -111,7 +111,7 @@ export class SearchEngineBooksComponent implements OnInit {
           $("#errorMsg").hide();
         }
       })
-      .catch(err => $('#errorMsg').text('Le serveur ne répond pas. Pense à démarrer l\'API tête d\'oeuf').fadeIn(400));
+      .catch(err => $('#errorMsg').text('Le serveur ne répond pas.').fadeIn(400));
 
   }
 
@@ -123,7 +123,7 @@ export class SearchEngineBooksComponent implements OnInit {
 
   categoryChecked(categoryId: number) {
 
-    if (this.categorySelectedId == categoryId) return;
+    if (this.categorySelectedId === categoryId) return;
     this.categorySelectedId = categoryId;
     this.fetch();
 
